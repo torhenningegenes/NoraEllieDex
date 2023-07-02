@@ -26,7 +26,7 @@ import Start from "../Screens/Start/Start";
 import { POKEMON } from "../Constants/Routes";
 import PokemonDetails from "../Screens/PokemonDetails";
 import TestScreen from "../Screens/TestScreen/TestScreen";
-import Root from "./root";
+import Root from "./Root";
 
 export const router = createBrowserRouter(
 	createRoutesFromElements(
