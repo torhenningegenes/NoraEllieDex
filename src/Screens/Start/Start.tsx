@@ -4,6 +4,7 @@ import Screen from "../../Compositions/Screen";
 import { Pokemon } from "pokenode-ts";
 import usePokemon from "../../Hooks/Api/usePokemon";
 import { pokemonNames } from "../../Constants/PokemonNames";
+import PokemonOverviewCard from "../../Compositions/PokemonOverviewCard/PokemonOverviewCard";
 
 const Start = () => {
 	const { data, isLoading } = usePokemon(true, 300);
@@ -31,6 +32,7 @@ const Start = () => {
 					<PrimaryButton variant='contained'>Se mer</PrimaryButton>
 				</Grid>
 			</Grid>
+			<PokemonOverviewCard />
 		</Screen>
 	);
 };
