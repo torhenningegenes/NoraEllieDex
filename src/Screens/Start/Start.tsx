@@ -1,13 +1,17 @@
-import { Grid } from "@mui/material";
-import { PrimaryButton } from "../../Components/Buttons";
+import { Grid, Stack, Typography } from "@mui/material";
 import Screen from "../../Compositions/Screen";
 import { Pokemon } from "pokenode-ts";
 import usePokemon from "../../Hooks/Api/usePokemon";
 import { pokemonNames } from "../../Constants/PokemonNames";
 import PokemonOverviewCard from "../../Compositions/PokemonOverviewCard/PokemonOverviewCard";
 
+interface PokemonResponse {
+	name: string;
+	url: string;
+}
+
 const Start = () => {
-	const { data, isLoading } = usePokemon(true, 300);
+	const { data, isLoading } = usePokemon(true, 900);
 	if (!data) return null;
 
 	const pokemons = data.results.filter((pokemon: Pokemon) =>
@@ -19,20 +23,36 @@ const Start = () => {
 	return (
 		<Screen>
 			{isLoading && <h1>Loading...</h1>}
-			<Grid container columns={24} spacing={3}>
-				{pokemons.map((pokemon: Pokemon, index: number) => (
-					<Grid item xs={12} md={6} key={index}>
-						{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
-					</Grid>
-				))}
-				<Grid item xs={12} md={6}>
-					<PrimaryButton variant='contained'>Se mer</PrimaryButton>
+			<Stack direction='column' spacing={2} display='flex' alignItems='center'>
+				<Typography variant='h1'>NoraEllieDex</Typography>
+				<Grid
+					container
+					columns={24}
+					spacing={3}
+					m={0}
+					alignContent='center'
+					justifyContent='center'
+				>
+					{pokemons.map((pokemon: PokemonResponse, index: number) => (
+						<Grid
+							item
+							xs={12}
+							md={6}
+							key={index}
+							display='flex'
+							justifyContent='center'
+							alignContent={"center"}
+							alignItems={"center"}
+						>
+							<PokemonOverviewCard
+								name={pokemon.name}
+								url={pokemon.url}
+								queryKey={pokemon.name}
+							/>
+						</Grid>
+					))}
 				</Grid>
-				<Grid item xs={12} md={6}>
-					<PrimaryButton variant='contained'>Se mer</PrimaryButton>
-				</Grid>
-			</Grid>
-			<PokemonOverviewCard />
+			</Stack>
 		</Screen>
 	);
 };

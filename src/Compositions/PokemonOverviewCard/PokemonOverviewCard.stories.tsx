@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import PokemonOverviewCard from "./PokemonOverviewCard";
+import theme from "../../Components/Theme/defaultTheme";
+import { ThemeProvider } from "@emotion/react";
 
 const meta = {
 	title: "PokemonOverviewCard",
@@ -9,4 +11,10 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-export const Primary: Story = { render: () => <PokemonOverviewCard /> };
+export const Primary: Story = {
+	render: () => (
+		<ThemeProvider theme={theme}>
+			<PokemonOverviewCard />
+		</ThemeProvider>
+	),
+};
