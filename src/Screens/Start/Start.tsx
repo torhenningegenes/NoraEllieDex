@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { PrimaryButton } from "../../Components/Buttons/Buttons";
+import { PrimaryButton } from "../../Components/Buttons";
 import Screen from "../../Compositions/Screen";
 import { Pokemon } from "pokenode-ts";
 import usePokemon from "../../Hooks/Api/usePokemon";
