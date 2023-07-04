@@ -19,4 +19,10 @@ export const pokemonNames = [
 	"squirtle",
 	"wartortle",
 	"blastoise",
+	"dreadnaw",
+	"copperajah",
+	"toxtricity",
+	"grumpig",
+	"gyarados",
+	"raichu",
 ];

@@ -11,7 +11,7 @@ interface PokemonResponse {
 }
 
 const Start = () => {
-	const { data, isLoading } = usePokemon(true, 900);
+	const { data, isLoading } = usePokemon(true, 1200);
 	if (!data) return null;
 
 	const pokemons = data.results.filter((pokemon: Pokemon) =>
