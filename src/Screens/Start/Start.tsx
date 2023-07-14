@@ -28,7 +28,6 @@ const Start = () => {
 				<Grid
 					container
 					columns={24}
-					spacing={3}
 					m={0}
 					alignContent='center'
 					justifyContent='center'
@@ -36,9 +35,10 @@ const Start = () => {
 					{pokemons.map((pokemon: PokemonResponse, index: number) => (
 						<Grid
 							item
-							xs={12}
-							md={6}
+							xs={24}
+							md={12}
 							key={index}
+							mt={3}
 							display='flex'
 							justifyContent='center'
 							alignContent={"center"}
