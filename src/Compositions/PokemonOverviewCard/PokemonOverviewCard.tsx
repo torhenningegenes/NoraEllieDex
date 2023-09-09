@@ -47,10 +47,12 @@ const PokemonOverviewCard = ({
 							</Box>
 							<Box sx={{ flex: "0 0 auto" }}>
 								<Stack direction='column' spacing={2}>
-									<Chip label='type' typeBackgroundColor='fire' />
-									<Chip label='type' typeBackgroundColor='psychic' />
-									<Chip label='type' typeBackgroundColor='water' />
-									<Box sx={{ bgcolor: "yellow" }}>Chip1</Box>
+									{pokemon.types.map((type: any) => (
+										<Chip
+											label={type.type.name}
+											typeBackgroundColor={type.type.name}
+										/>
+									))}
 								</Stack>
 							</Box>
 						</Box>

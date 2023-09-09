@@ -26,6 +26,13 @@ export enum ChipColor {
 	fire = "#FF8E3D",
 	water = "blue",
 	psychic = "purple", // Corrected the spelling of "psychic"
+	grass = "green",
+	electric = "yellow",
+	flying = "lightblue",
+	dragon = "#9c5107",
+	steele = "#a8a8a8",
+	ghost = "#b456fc",
+	poison = "#aefc56",
 }
 
 interface StyleChipProps extends ChipProps {

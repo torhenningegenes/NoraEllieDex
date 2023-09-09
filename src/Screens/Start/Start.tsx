@@ -37,6 +37,7 @@ const Start = () => {
 							item
 							xs={24}
 							md={12}
+							lg={8}
 							key={index}
 							mt={3}
 							display='flex'
