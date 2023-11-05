@@ -6,6 +6,8 @@ import { PrimaryButton } from "../../Components/Buttons";
 import useSinglePokemon from "../../Hooks/Api/useSinglePokemon";
 import { Chip } from "../../Components/Chip";
 import { PokemonType } from "pokenode-ts";
+import { useNavigate } from "react-router";
+import { POKEMON } from "../../Constants/Routes";
 
 interface PokemonOverviewCardProps {
 	name: string;
@@ -19,8 +21,11 @@ const PokemonOverviewCard = ({
 	url,
 	queryKey,
 }: PokemonOverviewCardProps) => {
+	const navigate = useNavigate();
+
 	console.log(url);
 	const { data: pokemon, isLoading } = useSinglePokemon(url, queryKey);
+	console.log(pokemon);
 	if (!pokemon) return null;
 	return (
 		<ThemeProvider theme={theme}>
@@ -72,6 +77,7 @@ const PokemonOverviewCard = ({
 						<Box>
 							<Typography variant='subtitle1'>{name.toUpperCase()}</Typography>
 						</Box>
+						{/* <PrimaryButton onClick={() => navigate(`${POKEMON}/:${pokemon.}`)}> */}
 						<PrimaryButton>Se mer</PrimaryButton>
 					</CardContent>
 				</Card>

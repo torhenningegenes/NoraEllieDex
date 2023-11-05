@@ -1,9 +1,5 @@
 function App() {
-	return (
-		<>
-			<div className='App'>Hello Vite + React!</div>
-		</>
-	);
+	return <></>;
 }
 
 export default App;

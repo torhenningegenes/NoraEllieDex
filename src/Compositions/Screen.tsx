@@ -35,7 +35,9 @@ const Screen = ({ children }: { children: ReactNode }) => {
 						margin: 0,
 						padding: 4,
 						boxSizing: "border-box",
-						bgcolor: "#edf2ff",
+						bgcolor: " #FF3CAC;",
+						backgroundImage:
+							"linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)",
 						height: "100%",
 					}}
 				>

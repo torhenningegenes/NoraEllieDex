@@ -6,7 +6,7 @@ import {
 import ErrorPage from "./error-page";
 import Start from "../Screens/Start/Start";
 import { POKEMON } from "../Constants/Routes";
-import PokemonDetails from "../Screens/PokemonDetails";
+import PokemonDetails from "../Screens/PokemonDetails/PokemonDetails";
 import TestScreen from "../Screens/TestScreen/TestScreen";
 import Root from "./Root";
 
