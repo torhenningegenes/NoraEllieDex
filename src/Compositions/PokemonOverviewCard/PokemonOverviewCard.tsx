@@ -1,10 +1,11 @@
 import { ThemeProvider } from "@emotion/react";
 import { Card } from "../../Components/Card";
 import { Box, Stack, Typography, CardMedia, CardContent } from "@mui/material";
-import theme from "../../Components/Theme/defaultTheme";
+import theme from "../../Theme/defaultTheme";
 import { PrimaryButton } from "../../Components/Buttons";
 import useSinglePokemon from "../../Hooks/Api/useSinglePokemon";
 import { Chip } from "../../Components/Chip";
+import { PokemonType } from "pokenode-ts";
 
 interface PokemonOverviewCardProps {
 	name: string;
@@ -17,9 +18,10 @@ const PokemonOverviewCard = ({
 	name,
 	url,
 	queryKey,
-}: PokemonOverviewCardProps): JSX.Element => {
+}: PokemonOverviewCardProps) => {
 	console.log(url);
 	const { data: pokemon, isLoading } = useSinglePokemon(url, queryKey);
+	if (!pokemon) return null;
 	return (
 		<ThemeProvider theme={theme}>
 			{name && !isLoading && (
@@ -46,12 +48,20 @@ const PokemonOverviewCard = ({
 								</Stack>
 							</Box>
 							<Box sx={{ flex: "0 0 auto" }}>
-								<Stack direction='column' spacing={2}>
-									<Chip label='type' typeBackgroundColor='fire' />
+								{pokemon && (
+									<Stack direction='column' spacing={2}>
+										{pokemon.types.map((obj: any) => (
+											<Chip
+												label={obj.type.name}
+												typeBackgroundColor={obj.type.name}
+											/>
+										))}
+										{/* <Chip label='type' typeBackgroundColor='fire' />
 									<Chip label='type' typeBackgroundColor='psychic' />
-									<Chip label='type' typeBackgroundColor='water' />
-									<Box sx={{ bgcolor: "yellow" }}>Chip1</Box>
-								</Stack>
+								<Chip label='type' typeBackgroundColor='water' /> */}
+										{/* <Box sx={{ bgcolor: "yellow" }}>{pokemon.types}</Box> */}
+									</Stack>
+								)}
 							</Box>
 						</Box>
 					</CardContent>

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import PokemonOverviewCard from "./PokemonOverviewCard";
-import theme from "../../Components/Theme/defaultTheme";
+import theme from "../../Theme/defaultTheme";
 import { ThemeProvider } from "@emotion/react";
 
 const meta = {

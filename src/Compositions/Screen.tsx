@@ -1,9 +1,28 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { ReactNode } from "react";
+import { TertiaryButton } from "../Components/Buttons";
+
+const NavBar = () => {
+	return (
+		<Box
+			sx={{
+				display: "flex",
+				p: 2,
+				justifyContent: "space-between",
+				alignContent: "center",
+				alignItems: "center",
+			}}
+		>
+			<Typography>NoraEllieDex</Typography>
+			<TertiaryButton>Login</TertiaryButton>
+		</Box>
+	);
+};
 
 const Screen = ({ children }: { children: ReactNode }) => {
 	return (
 		<>
+			<NavBar />
 			<Box
 				display='flex'
 				alignItems='center'

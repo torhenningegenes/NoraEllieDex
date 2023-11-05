@@ -1,21 +1,3 @@
-// import { createBrowserRouter } from "react-router-dom";
-// import Root from "./root";
-// import ErrorPage from "./error-page";
-// import { POKEMON } from "../Constants/Routes";
-// import PokemonDetails from "../Screens/PokemonDetails";
-
-// export const router = createBrowserRouter([
-// 	{
-// 		path: "/",
-// 		element: <Root />,
-// 		errorElement: <ErrorPage />,
-// 		children: [
-// 			{ path: POKEMON, element: <Root /> },
-// 			{ path: "pokemon/:id", element: <PokemonDetails /> },
-// 		],
-// 	},
-// ]);
-
 import {
 	createRoutesFromElements,
 	createBrowserRouter,
