@@ -4,12 +4,8 @@ export enum ChipLabel {
 	normal = "Normal",
 	fire = "Fire",
 	water = "Water",
-}
-
-export enum ChipColor {
-	normal = "gray",
-	fire = "red",
-	water = "blue",
+	grass = "Grass",
+	poison = "Poison",
 }
 
 const Chip = () => {

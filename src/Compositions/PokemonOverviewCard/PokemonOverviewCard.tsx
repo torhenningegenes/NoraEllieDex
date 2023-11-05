@@ -48,20 +48,14 @@ const PokemonOverviewCard = ({
 								</Stack>
 							</Box>
 							<Box sx={{ flex: "0 0 auto" }}>
-								{pokemon && (
-									<Stack direction='column' spacing={2}>
-										{pokemon.types.map((obj: any) => (
-											<Chip
-												label={obj.type.name}
-												typeBackgroundColor={obj.type.name}
-											/>
-										))}
-										{/* <Chip label='type' typeBackgroundColor='fire' />
-									<Chip label='type' typeBackgroundColor='psychic' />
-								<Chip label='type' typeBackgroundColor='water' /> */}
-										{/* <Box sx={{ bgcolor: "yellow" }}>{pokemon.types}</Box> */}
-									</Stack>
-								)}
+								<Stack direction='column' spacing={2}>
+									{pokemon.types.map((type: any) => (
+										<Chip
+											label={type.type.name}
+											typeBackgroundColor={type.type.name}
+										/>
+									))}
+								</Stack>
 							</Box>
 						</Box>
 					</CardContent>
